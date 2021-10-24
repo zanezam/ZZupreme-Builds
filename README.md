@@ -1,17 +1,19 @@
+[![Actively Maintained](https://img.shields.io/badge/Maintenance%20Level-Actively%20Maintained-green.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
 # ZZupreme Kernel Builds
 
 Here i condensed some informations about my 'just for fun projects' [Franco Kernel ZZupreme Build](https://github.com/zanezam/enchilada)
-(for OOS9 and **meanwhile obsolete!**) and [blu_spark Kernel ZZupreme Build](https://github.com/zanezam/op6) (for OOS10, **actively maintained**) which contains following
+(for OOS9 and **meanwhile obsolete!**) and [blu_spark Kernel ZZupreme Build](https://github.com/zanezam/op6) (**for OOS10 - upstreamed but obsolete, for OOS11 not yet upstreamed but actively maintained**) which contains following
 little 'icing' on top of the corresponding latest version of [Francisco Francos](https://github.com/franciscofranco) and [eng.stk's](https://github.com/engstk)
 great kernels for the OnePlus 6/6T aka 'enchilada/fajita'
 
 ## Changes
 
 * [Upstreamed](https://github.com/android-linux-stable/notes) 4.9 kernel stable base [thx to nathanchance!](https://github.com/android-linux-stable/op6) with bue_spark kernel changes merged in (needed only with blue_spark, francos kernel was already upstreamed back then).
+  *NOTE: as of 24.10.21: OOS9 and OOS10 kernels are upstreamed, OOS11 ones not yet upstreamed (WIP) but available without upstream patches*
 * Build with recent Clang/Linaro toolchains, [thx to nathanchance!](https://github.com/nathanchance/android-kernel-clang) for the useful 'Clang-infos'!
-* Build with [-O3 in Clang and -Ofast compiler optimization in Linaro build](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html).
+* Build with [-O3 and -Ofast where possible in Clang and full -Ofast compiler optimization in Linaro build](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html).
 * Fixed all possible to fix compiler/optimization related warnings (some 'dts' ones remain).
-* Added/ported good old [ZZMoove Governor](https://github.com/zanezam/cpufreq-governor-zzmoove).   
+* Added/ported good old [ZZMoove Governor](https://github.com/zanezam/cpufreq-governor-zzmoove).
   *HINT: You can switch to that governor for example with 'FK-Manager' or 'Kernel Adiutor' app by using the 'CPU Governor' section in these apps. It's however already set as default governor after boot on blu_spark kernel ZZupreme Builds via kernel init process.*
 * Brought the ol' couple Zen I/O Scheduler + ZZmoove CPU Governor 'completely together again' by making Zen scheduler default on all partitions (only in blu_spark kernel)
 * Added a build script for easy [building of blu_spark kernel](https://github.com/zanezam/op6/blob/zzupreme-clang/build.sh) and for easy [building of franco kernel](https://github.com/zanezam/enchilada/blob/zzupreme/build.sh)
@@ -41,7 +43,7 @@ Franco Kernel ZZupreme Builds:
 [Clang Toolchain](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/android-9.0.0_r1/clang-4691093.tar.gz) (recommended by Nathan Chancellor)
 
 blue_spark Kernel ZZupreme Builds:  
-[Clang Toolchain](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/refs/heads/master/clang-r383902/) (latest as of may 2020)  
+[Clang Toolchain](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/refs/heads/master/clang-r433403b/) (latest as of oct 2021)
 [Linaro Toolchain](https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz) (latest as of may 2020)
 
 ## Supported Devices and Compatibility of pre-built Images
