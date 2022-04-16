@@ -58,7 +58,8 @@ franco kernel/blue_spark kernel supports both devices within one image it should
 
 ## Downloads
 
-Pre-built images can be downloaded from [HERE](http://www.mediafire.com/folder/791mkwlmfklow/ZZupreme-Builds) and [HERE](https://www.androidfilehost.com/?w=files&flid=298769)
+Pre-built images can be downloaded from [HERE](http://www.mediafire.com/folder/791mkwlmfklow/ZZupreme-Builds) and [HERE](https://www.androidfilehost.com/?w=files&flid=298769)  
+Franco Kernel Manager flash config file for mcd Kernel: [OxygenOS / custom ROM](https://raw.githubusercontent.com/zanezam/ZZupreme-Builds/master/fkm_updater/mcd/op6x.json)
 
 ## Credits
 
