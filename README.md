@@ -2,29 +2,29 @@
 # ZZupreme Kernel Builds
 
 Here i condensed some informations about my 'just for fun projects' [Franco Kernel ZZupreme Build](https://github.com/zanezam/enchilada)
-(for OOS9 and **meanwhile obsolete!**) and [blu_spark Kernel ZZupreme Build](https://github.com/zanezam/op6) (**for OOS10 - upstreamed but obsolete, for OOS11 not yet upstreamed but actively maintained**) which contains following
-little 'icing' on top of the corresponding latest version of [Francisco Francos](https://github.com/franciscofranco) and [eng.stk's](https://github.com/engstk)
+(for OOS9 and **meanwhile obsolete!**) [blu_spark Kernel ZZupreme Build](https://github.com/zanezam/op6) (**for OOS10 - upstreamed but obsolete, for OOS11 not upstreamed but actively maintained**) and [mcd Kernel ZZupreme Build](https://github.com/zanezam/android_kernel_oneplus_sdm845) (**for OOS and custom roms + upstreamed by default**) which contains following
+little 'icing' on top of the corresponding latest version of [Francisco Francos](https://github.com/franciscofranco), [eng.stk's](https://github.com/engstk) and lately also [mcdachpappe's](https://github.com/mcdachpappe/)
 great kernels for the OnePlus 6/6T aka 'enchilada/fajita'
 
 ## Changes
 
 * [Upstreamed](https://github.com/android-linux-stable/notes) 4.9 kernel stable base [thx to nathanchance!](https://github.com/android-linux-stable/op6) with bue_spark kernel changes merged in (needed only with blue_spark, francos kernel was already upstreamed back then).
-  *NOTE: as of 24.10.21: OOS9 and OOS10 kernels are upstreamed, OOS11 ones not yet upstreamed (WIP) but available without upstream patches*
-* Build with recent Clang/Linaro toolchains, [thx to nathanchance!](https://github.com/nathanchance/android-kernel-clang) for the useful 'Clang-infos'!
+  *NOTE: as of 16.04.22: OOS9 and OOS10 kernels are upstreamed, blu_spark OOS11 ones not upstreamed and mcd kernels are again upstreamed*
+* Build with recent Clang/Linaro toolchains, thx to nathanchance for the useful ['Clang-infos'](https://github.com/nathanchance/android-kernel-clang)! And thx to mcdachpappe for [provided clang toolchain](https://github.com/mcdachpappe/mcd-clang).
 * Build with [-O3 and -Ofast where possible in Clang and full -Ofast compiler optimization in Linaro build](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html).
-* Fixed all possible to fix compiler/optimization related warnings (some 'dts' ones remain).
+* Fixed all possible to fix compiler/optimization related warnings (some remain tho).
 * Added/ported good old [ZZMoove Governor](https://github.com/zanezam/cpufreq-governor-zzmoove).
-  *HINT: You can switch to that governor for example with 'FK-Manager' or 'Kernel Adiutor' app by using the 'CPU Governor' section in these apps. It's however already set as default governor after boot on blu_spark kernel ZZupreme Builds via kernel init process.*
-* Brought the ol' couple Zen I/O Scheduler + ZZmoove CPU Governor 'completely together again' by making Zen scheduler default on all partitions (only in blu_spark kernel)
-* Added a build script for easy [building of blu_spark kernel](https://github.com/zanezam/op6/blob/zzupreme-clang/build.sh) and for easy [building of franco kernel](https://github.com/zanezam/enchilada/blob/zzupreme/build.sh)
+  *HINT: You can switch to that governor for example with 'FK-Manager' or 'Kernel Adiutor' app by using the 'CPU Governor' section in these apps. It's however already set as default governor after boot on blu_spark and mcd-kernel kernel ZZupreme Builds via kernel init process.*
+* Brought the ol' couple Zen I/O Scheduler + ZZmoove CPU Governor 'completely together again' by making Zen scheduler default on all partitions (only in blu_spark kernel and mcd-kernel)
+* Added a build script for easy [building of blu_spark kernel](https://github.com/zanezam/op6/blob/zzupreme-clang/build.sh) for easy [building of franco kernel](https://github.com/zanezam/enchilada/blob/zzupreme/build.sh) and for [building of mcd-kernel](https://github.com/zanezam/android_kernel_oneplus_sdm845/blob/mcd-R-zzupreme/build.sh)
   ```bash
   Usage:  ./build.sh gcc | linaro | clang | clean
-  gcc     - buid with stock toolchain (obsolete option in blu_spark kernel)
-  linaro  - build with linaro toolchain (new option in blu_spark kernel)
+  gcc     - buid with stock toolchain (obsolete option in blu_spark kernel and mcd-kernel)
+  linaro  - build with linaro toolchain (new option in blu_spark kernel and not yet available in mcd-kernel)
   clang   - build with clang toolchain
   clean   - clean sources (deletes compile dir)
   ```
-Detailed changelog of corresponding ZZupreme Build kernels can be found in the [ZZupreme blue_spark kernel source repo](https://github.com/zanezam/op6/commits) and in the [ZZupreme franco kernel source repo](https://github.com/zanezam/enchilada/commits)
+Detailed changelog of corresponding ZZupreme Build kernels can be found in the [ZZupreme blue_spark kernel source repo](https://github.com/zanezam/op6/commits) in the [ZZupreme franco kernel source repo](https://github.com/zanezam/enchilada/commits) and in the [ZZupreme mcd kernel source repo](https://github.com/zanezam/android_kernel_oneplus_sdm845/commits)
 
 ## Aim
 
@@ -42,8 +42,8 @@ Franco Kernel ZZupreme Builds:
 [Google Stock Toolchain](https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/55a930690d28f7b4f4f84d23ac94b3cffc034106.tar.gz) (meanwhile obolete as the [clang toolchain is the new stock default!](https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+/fc97ce6abfe822403eb219dcbd1067a53c49e4f1))  
 [Clang Toolchain](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/android-9.0.0_r1/clang-4691093.tar.gz) (recommended by Nathan Chancellor)
 
-blue_spark Kernel ZZupreme Builds:  
-[Clang Toolchain](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/refs/heads/master/clang-r433403b/) (latest as of oct 2021)
+blue_spark and mcd Kernel ZZupreme Builds:  
+[Clang Toolchain](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/refs/heads/master/clang-r450784c/) (latest as of april 2022)
 [Linaro Toolchain](https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz) (latest as of may 2020)
 
 ## Supported Devices and Compatibility of pre-built Images
@@ -66,14 +66,17 @@ Many thanks and credits to:
 
 [Francisco Franco](https://github.com/franciscofranco) for all his great work! (kudos for the constant quality for years!)  
 [eng.stk's](https://github.com/engstk) for all his great work! (kudos for the constant quality and 'speedness' for years!)  
+[mcdachpappe](https://github.com/mcdachpappe) for still providing fresh OP6/6T kernels for OOS and Custom Roms!)  
 [Nathan Chancellor](https://github.com/nathanchance) for profound infos about building and toolchains and the rest of his great work, which also includes upstreaming of these kernels btw.!  
 [TheEmpressMiaw](https://github.com/TheEmpressMiaw) for testing ZZupreme Builds test images and ZZMoove governor! thx girl for risking it on ur one and only daily driver! much appreciated!  
 
 ## Support
 
-Im NOT providing any support for the kernel images i build, however for the original kernels themself there is a
-[offical Franco Kernel XDA support thread](https://forum.xda-developers.com/oneplus-6/development/kernel-francokernel-r1-18th-june-t3806062) and a [offical blu_spark Kernel XDA support thread](https://forum.xda-developers.com/oneplus-6/oneplus-6--6t-cross-device-development/kernel-t3800965) available.  
-**In case of issues please BEFORE posting there flash the recent original Franco/blu_spark kernel and see if the issue is gone then, if not u can go on and post there. thx!**
+Im NOT providing any support for the kernel images i build, however for the original kernels themself there are following XDA support threads available.  
+[offical Franco Kernel XDA support thread](https://forum.xda-developers.com/oneplus-6/development/kernel-francokernel-r1-18th-june-t3806062)  
+[offical blu_spark Kernel XDA support thread](https://forum.xda-developers.com/oneplus-6/oneplus-6--6t-cross-device-development/kernel-t3800965)  
+[offical mcd Kernel XDA support thread](https://forum.xda-developers.com/t/kernel-android-10-12-oos-custom-mcd-kernel-r15.3931562/page-35#post-86655651)  
+**In case of issues please BEFORE posting there flash the recent original Franco/blu_spark/mcd kernel and see if the issue is gone then, if not u can go on and post there. thx!**
 
 ## Disclaimer
 
