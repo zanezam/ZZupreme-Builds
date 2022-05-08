@@ -1,11 +1,11 @@
 {
   "kernel": {
     "name": "mcd-kernel for OnePlus 6/T - ZZupreme Build by ZaneZam",
-    "version": "1.0-r15",
-    "link": "https://github.com/zanezam/android_kernel_oneplus_sdm845/releases/download/r15/mcd-r15-zzupreme-1.0-op6x-2022-04-16-171646-clang-anykernel.zip",
-    "changelog_url": "https://github.com/mcdachpappe/android_kernel_oneplus_sdm845/files/8370361/changelog_op6x_r15.txt",
-    "date": "2022-04-16",
-    "sha1": "28a1b933b69c147f55893769cd15ffba48b7b929"
+    "version": "1.1-r16",
+    "link": "https://github.com/zanezam/android_kernel_oneplus_sdm845/releases/download/r16/mcd-r16-zzupreme-1.1-op6x-2022-05-08-180211-clang-anykernel.zip",
+    "changelog_url": "https://github.com/mcdachpappe/android_kernel_oneplus_sdm845/files/8601882/changelog_op6x_r16.txt",
+    "date": "2022-05-08",
+    "sha1": "c27d74d6ca76512739545db75083cad47ec869e0"
   },
   "support": {
     "link": "https://github.com/zanezam/ZZupreme-Builds/"
