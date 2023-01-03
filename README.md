@@ -1,4 +1,4 @@
-[![Actively Maintained](https://img.shields.io/badge/Maintenance%20Level-Actively%20Maintained-green.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
+[![Not Maintained](https://img.shields.io/badge/Maintenance%20Level-Not%20Maintained-yellow.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
 # ZZupreme Kernel Builds
 
 Here i condensed some informations about my 'just for fun projects' [Franco Kernel ZZupreme Build](https://github.com/zanezam/enchilada)
@@ -8,9 +8,10 @@ great kernels for the OnePlus 6/6T aka 'enchilada/fajita'
 
 ## Changes
 
+**IMPORTANT NOTE: Due to [the retiring message](https://github.com/mcdachpappe/android_kernel_oneplus_sdm845/releases/tag/r19) from mcdachpappe in his r19 release changelog and me meanwhile switching to another phone this fork also won't be maintained anymore!**
 * [Upstreamed](https://github.com/android-linux-stable/notes) 4.9 kernel stable base [thx to nathanchance!](https://github.com/android-linux-stable/op6) with bue_spark kernel changes merged in (needed only with blue_spark, francos kernel was already upstreamed back then).
   *NOTE: as of 16.04.22: OOS9 and OOS10 kernels are upstreamed, blu_spark OOS11 ones not upstreamed and mcd kernels are again upstreamed*
-* Build with recent Clang/Linaro toolchains, thx to nathanchance for the useful ['Clang-infos'](https://github.com/nathanchance/android-kernel-clang)! And thx to mcdachpappe for [provided clang toolchain](https://github.com/mcdachpappe/mcd-clang).
+* Build with recent Clang/Linaro toolchains, thx to nathanchance for the useful ['Clang-infos'](https://github.com/nathanchance/android-kernel-clang)! And thx to mcdachpappe for [provided v15 clang toolchain](https://github.com/mcdachpappe/mcd-clang) [and v12 clang toolchain](https://github.com/mcdachpappe/android_prebuilts_clang_kernel_linux-x86_clang-r416183b).
 * Build with [-O3 and -Ofast where possible in Clang and full -Ofast compiler optimization in Linaro build](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html).
 * Fixed all possible to fix compiler/optimization related warnings (some remain tho).
 * Added/ported good old [ZZMoove Governor](https://github.com/zanezam/cpufreq-governor-zzmoove).
@@ -39,16 +40,20 @@ So this would be beneficial in two ways and i hope this is the experience you wi
 Here are the links to the toolchains i used in case you want to compile yourself:
 
 Franco Kernel ZZupreme Builds:  
-[Google Stock Toolchain](https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/55a930690d28f7b4f4f84d23ac94b3cffc034106.tar.gz) (meanwhile obolete as the [clang toolchain is the new stock default!](https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+/fc97ce6abfe822403eb219dcbd1067a53c49e4f1))  
+[Google Stock Toolchain](https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+archive/55a930690d28f7b4f4f84d23ac94b3cffc034106.tar.gz) (meanwhile obsolete as the [clang toolchain is the new stock default!](https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/+/fc97ce6abfe822403eb219dcbd1067a53c49e4f1))  
 [Clang Toolchain](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/android-9.0.0_r1/clang-4691093.tar.gz) (recommended by Nathan Chancellor)
 
 blue_spark and mcd Kernel ZZupreme Builds:  
 [Clang Toolchain](https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+/refs/heads/master/clang-r450784c/) (latest as of april 2022)
 [Linaro Toolchain](https://releases.linaro.org/components/toolchain/binaries/latest-7/aarch64-linux-gnu/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu.tar.xz) (latest as of may 2020)
 
+mcd Kernel ZZupreme Builds (provided by mcdachpappe):
+[Clang Toolchain v15](https://github.com/mcdachpappe/mcd-clang) (latest as of april 2022)
+[Clang Toolchain v12](https://github.com/mcdachpappe/android_prebuilts_clang_kernel_linux-x86_clang-r416183b) (latest as of november 2022)
+
 ## Supported Devices and Compatibility of pre-built Images
 
-The pre-built images i provide are 100% compatible with [Franco Kernel Manager](https://francokernel.app/) and [Kernel Adiutor](https://f-droid.org/en/packages/com.nhellfire.kerneladiutor/) and are made to be used with the OnePlus 6 or 6T ONLY.
+The pre-built images i provide are 100% compatible with [Franco Kernel Manager](https://play.google.com/store/apps/details?id=com.franco.kernel) and [Kernel Adiutor](https://f-droid.org/de/packages/com.nhellfire.kerneladiutor/) and are made to be used with the OnePlus 6 or 6T ONLY.
 Features and additional functionalities are the same in this kernel builds as the ones in original kernel builds on which they are based on. So all infos about the usage with 'FK-Kernel Manager' and all other Franco Kernel/blu_spark kernel related things apply here too.
 *NOTE: You can always flash my provided kernel images over the original one from Franco/eng.stk and vice versa without the need to prepare anything.*
 
